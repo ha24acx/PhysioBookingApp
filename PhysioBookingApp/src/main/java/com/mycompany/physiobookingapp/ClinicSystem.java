@@ -160,10 +160,21 @@ public class ClinicSystem {
         scanner.nextLine();
         if (idx < 0 || idx >= available.size()) return;
 
-        Patient newPatient = createNewPatient();
-        allPatients.add(newPatient);
-        available.get(idx).book(newPatient);
-        System.out.println("Appointment booked successfully.");
+Patient newPatient = createNewPatient();
+allPatients.add(newPatient);
+available.get(idx).book(newPatient);
+System.out.println("********************************");
+System.out.println("Appointment booked successfully.");
+
+// Show details of booking
+Treatment bookedTreatment = available.get(idx);
+System.out.println("Booking Details:");
+System.out.println("Patient ID: "+ newPatient.getId());
+System.out.println("Patient: " + newPatient.getName());
+System.out.println("Date & Time: " + bookedTreatment.getTime());
+System.out.println("Treatment: " + bookedTreatment.getName());
+System.out.println("Physiotherapist: " + bookedTreatment.getPhysio().getName());
+
     }
 
     private void cancelAppointmentFlow() {
