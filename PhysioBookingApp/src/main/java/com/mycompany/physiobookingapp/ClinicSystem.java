@@ -287,7 +287,7 @@ public class ClinicSystem {
     
         // 2. Show current appointments
         System.out.println("\n****************************");
-        System.out.println("Your Current Appointments:");
+        System.out.println("Your Current Appointments:"); 
         System.out.println("****************************");
         for (int i = 0; i < bookedAppointments.size(); i++) {
             System.out.println((i+1) + ". " + bookedAppointments.get(i));
