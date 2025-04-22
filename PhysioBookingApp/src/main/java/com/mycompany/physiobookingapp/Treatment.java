@@ -61,7 +61,7 @@ public class Treatment {
         this.status = AppointmentStatus.AVAILABLE;
     }
 
-    public String toString() {
+    public String toString() { 
         return name + " at " + time + " - " + status +
                 (status != AppointmentStatus.AVAILABLE ? " (Patient: " + patient.getName() + ")" : "");
     }
