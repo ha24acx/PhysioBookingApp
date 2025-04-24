@@ -14,24 +14,40 @@ public class ClinicSystem {
     private final String ADMIN_PASSWORD = "admin123"; // Default admin password
 
     public void initializeData() {
-        // === Physiotherapists and Treatments ===
-        Physiotherapist p1 = new Physiotherapist("Khan", "03451234567", Arrays.asList("Massage", "Rehabilitation"));
-        Physiotherapist p2 = new Physiotherapist("Imran", "03551234567", Arrays.asList("Osteopathy", "Physiotherapy"));
-        
-        // Week 1–4: spread over 4 weeks in May 2025
-        p1.addTreatment(new Treatment("Massage", LocalDateTime.of(2025, 5, 1, 10, 0), p1));
-        p1.addTreatment(new Treatment("Rehabilitation", LocalDateTime.of(2025, 5, 3, 11, 0), p1));
-        
-        p2.addTreatment(new Treatment("Osteopathy", LocalDateTime.of(2025, 5, 2, 14, 0), p2));
-        p2.addTreatment(new Treatment("Physiotherapy", LocalDateTime.of(2025, 5, 6, 13, 0), p2));
-        
-        physios.addAll(Arrays.asList(p1, p2));
+    // === Physiotherapists and Treatments ===
+    Physiotherapist p1 = new Physiotherapist("Khan", "03451234567", Arrays.asList("Massage", "Rehabilitation"));
+    Physiotherapist p2 = new Physiotherapist("Imran", "03551234567", Arrays.asList("Osteopathy", "Physiotherapy"));
+    Physiotherapist p3 = new Physiotherapist("Fatima", "03331234567", Arrays.asList("Acupuncture", "Yoga Therapy"));
+    Physiotherapist p4 = new Physiotherapist("Abdullah", "03111234567", Arrays.asList("Sports Therapy", "Pain Management"));
+    Physiotherapist p5 = new Physiotherapist("Ayesha", "03211234567", Arrays.asList("Pediatric Care", "Geriatric Care"));
     
-        // === Sample Patients with passwords ===
-        allPatients.add(new Patient("Ali Raza", "Lahore", "03011234567", "pass123"));
-        allPatients.add(new Patient("Sara Khan", "Karachi", "03021234567", "pass456"));
-        allPatients.add(new Patient("Ahmed Butt", "Islamabad", "03031234567", "pass789"));
-    }
+    
+    p1.addTreatment(new Treatment("Massage", LocalDateTime.of(2025, 5, 1, 10, 0), p1));
+    p1.addTreatment(new Treatment("Rehabilitation", LocalDateTime.of(2025, 5, 3, 11, 0), p1));
+    p1.addTreatment(new Treatment("Massage", LocalDateTime.of(2025, 5, 15, 14, 0), p1));
+    p2.addTreatment(new Treatment("Osteopathy", LocalDateTime.of(2025, 5, 2, 14, 0), p2));
+    p2.addTreatment(new Treatment("Physiotherapy", LocalDateTime.of(2025, 5, 6, 13, 0), p2));
+    p2.addTreatment(new Treatment("Osteopathy", LocalDateTime.of(2025, 5, 20, 10, 0), p2));
+    p3.addTreatment(new Treatment("Acupuncture", LocalDateTime.of(2025, 5, 5, 9, 0), p3));
+    p3.addTreatment(new Treatment("Yoga Therapy", LocalDateTime.of(2025, 5, 12, 16, 0), p3));
+    p4.addTreatment(new Treatment("Sports Therapy", LocalDateTime.of(2025, 5, 7, 11, 0), p4));
+    p4.addTreatment(new Treatment("Pain Management", LocalDateTime.of(2025, 5, 14, 15, 0), p4));
+    p5.addTreatment(new Treatment("Pediatric Care", LocalDateTime.of(2025, 5, 8, 10, 0), p5));
+    p5.addTreatment(new Treatment("Geriatric Care", LocalDateTime.of(2025, 5, 22, 13, 0), p5));
+    
+    physios.addAll(Arrays.asList(p1, p2, p3, p4, p5));
+    
+    allPatients.add(new Patient("Ali Raza", "Lahore", "03011234567", "pass123"));
+    allPatients.add(new Patient("Sara Khan", "Karachi", "03021234567", "pass123"));
+    allPatients.add(new Patient("Ahmed Butt", "Islamabad", "03031234567", "pass123"));
+    allPatients.add(new Patient("Fatima Akhtar", "Rawalpindi", "03041234567", "pass123"));
+    allPatients.add(new Patient("Usman Malik", "Peshawar", "03051234567", "pass123"));
+    allPatients.add(new Patient("Ayesha Siddiqui", "Quetta", "03061234567", "pass123"));
+    allPatients.add(new Patient("Bilal Ahmed", "Faisalabad", "03071234567", "pass123"));
+    allPatients.add(new Patient("Hina Shah", "Multan", "03081234567", "pass123"));
+    allPatients.add(new Patient("Kamran Ali", "Gujranwala", "03091234567", "pass123"));
+    allPatients.add(new Patient("Nadia Khan", "Hyderabad", "03101234567", "pass123"));
+}
     
     public void start() {
         while (true) {
@@ -118,6 +134,9 @@ public class ClinicSystem {
         String password = scanner.nextLine();
 
         if (password.equals(ADMIN_PASSWORD)) {
+            System.out.println("\n************************");
+            System.out.println("Welcom to Admin Panel");
+            System.out.println("************************");
             adminPanel();
         } else {
             System.out.println("\n********************************");
