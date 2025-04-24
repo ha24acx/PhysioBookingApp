@@ -280,8 +280,8 @@ public class ClinicSystem {
             System.out.println("***********************");
             return;
         }
-
-        for (int i = 0; i < booked.size(); i++) {
+       
+        for (int i = 0; i < booked.size(); i++) {            
             System.out.println((i + 1) + ". " + booked.get(i));
         }
 
@@ -313,9 +313,9 @@ public class ClinicSystem {
         }
     
         // 3. Select appointment to update
-        System.out.println("\n*********************************************************");
-        System.out.print("To update, please select an appointment (enter the number):");
         System.out.println("*********************************************************");
+        System.out.print("To update, please select an appointment (enter the number):");
+        System.out.println("\n*********************************************************");
         int selectedIndex = scanner.nextInt() - 1;
         scanner.nextLine();
         
@@ -409,13 +409,12 @@ public class ClinicSystem {
             System.out.println("*********************");
             return;
         }
-
+        System.out.println("*********************************");
         for (int i = 0; i < booked.size(); i++) {
             System.out.println((i + 1) + ". " + booked.get(i));
         }
         System.out.println("\n*************************************");
         System.out.print("Select appointment to mark as attended: ");
-        System.out.println("**************************************");
         int idx = scanner.nextInt() - 1;
         scanner.nextLine();
         if (idx < 0 || idx >= booked.size()) return;
